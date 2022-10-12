@@ -24,7 +24,7 @@
     <body>
         <table border="1">
             <?php
-                $stmt = $pdo->query("SELECT name, email, password, us er_id FROM users");
+                $stmt = $pdo->query("SELECT name, email, password, user_id FROM users");
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo "<tr><td>";
                     echo($row['name']);
