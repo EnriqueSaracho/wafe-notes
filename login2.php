@@ -1,6 +1,7 @@
 <?php
 require_once "pdo.php";
 
+// This is the correct way (using $stmt->execute())
 if ( isset($_POST['email']) && isset($_POST['password'])) {
     echo("<p>Handling POST data...</p>\n");
 
