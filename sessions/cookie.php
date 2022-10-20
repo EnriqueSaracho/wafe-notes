@@ -1,4 +1,5 @@
 <?php
+// Cookies: bit of data (key value pairs) that the server can store on the browser.
 // Note - cannot have any output before setcookie
 if (!isset($_COOKIE['zap'])) {
     setcookie('zap', '42', time()+3600);
