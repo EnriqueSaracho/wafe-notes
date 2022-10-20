@@ -1,7 +1,6 @@
 <?php
     //Note - cannot have any output before this
     session_start();
-
     if (!isset($_SESSION['value'])) {
         echo("<p>Sessions is empty</p>\n");
         $_SESSION['value'] = 0;
