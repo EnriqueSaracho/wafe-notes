@@ -1,3 +1,19 @@
+<?php
+    session_start();
+    if (isset($_POST['account']) && isset($_POST['pw'])) {
+        unset($_SESSION['account']);
+        if ($_POST['pw'] == 'umsi') {
+            $_SESSION["account"] = $_POST['account'];
+            $_SESSION['success'] = "Logged in.";
+            header('Location: app.php');
+            return;
+        } else {
+            $_SESSION['error'] = 'Incorrect password.';
+            header("Location: login.php");
+            return;
+        }
+    }
+?>
 <html>
     <head></head>
     <body style="font-family: sans-serif;">
