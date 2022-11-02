@@ -19,7 +19,7 @@ session_start();
         echo ('<p style="color: red">' . $_SESSION['error'] . '</p>');
         unset($_SESSION['error']);
     }
-    if (!isset($_SESSION['email'])) { ?>
+    if (!isset($_SESSION['account'])) { ?>
         <a href="login.php">Please log in</a>
     <?php } else { ?>
         <a href="logout.php">Logout</a><br>
