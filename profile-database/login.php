@@ -16,6 +16,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         return;
     }
 
+    $check = hash('md5', $salt.$_POST['password']);
     $sql = "SELECT name FROM users WHERE email = :email AND password = :password";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array(
@@ -29,7 +30,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         header('Location: index.php');
         return;
     } else {
-        $_SESSION['account'] = $_POST['email'];
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['success'] = 'Logged in.';
         header("Location: index.php");
         return;
