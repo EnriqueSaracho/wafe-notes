@@ -17,7 +17,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         header('Location: index.php');
         return;
     } else {
-        $_SESSION['email'] = $_POST['account'];
+        $_SESSION['email'] = $_POST['email'];
         $_SESSION['success'] = 'Logged in.';
         header("Location: index.php");
         return;

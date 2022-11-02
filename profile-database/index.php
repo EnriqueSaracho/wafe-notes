@@ -19,8 +19,14 @@ session_start();
         echo ('<p style="color: red">' . $_SESSION['error'] . '</p>');
         unset($_SESSION['error']);
     }
+    if (!isset($_SESSION['email'])) { ?>
+        <a href="login.php">Please log in</a>
+    <?php } else { ?>
+        <a href="logout.php">Logout</a><br>
+        <a href="add.php">Add new Entry</a>
+    <?php }
     ?>
-    <a href="login.php">Please log in</a>
+    <!-- <a href="login.php">Please log in</a> -->
     <!-- <table border="1">
             <tr><th>Name</th><th>Headline</th></tr>
         </table> -->
