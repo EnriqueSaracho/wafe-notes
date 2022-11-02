@@ -1,6 +1,29 @@
 <?php
 require_once "pdo.php";
 session_start();
+
+if (isset($_POST['email']) && isset($_POST['password'])) {
+
+    $sql = "SELECT name FROM users WHERE email = :email AND password = :password";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array(
+        ':email' => $_POST['email'],
+        ':password' => $_POST['password']
+    ));
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($row === false) {
+        $_SESSION['error'] = 'Incorrect password or email.';
+        header('Location: index.php');
+        return;
+    } else {
+        $_SESSION['email'] = $_POST['account'];
+        $_SESSION['success'] = 'Logged in.';
+        header("Location: index.php");
+        return;
+    }
+}
+
 ?>
 <html>
 
