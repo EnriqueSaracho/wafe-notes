@@ -16,8 +16,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         return;
     }
 
-    $check = hash('md5', $salt . $_POST['password']);
-    $sql = "SELECT name FROM users WHERE email = :email AND password = :password";
+    $sql = "SELECT user_id, name FROM users WHERE email = :email AND password = :password";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array(
         ':email' => $_POST['email'],
