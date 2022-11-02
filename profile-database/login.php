@@ -5,18 +5,18 @@ session_start();
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
     // PHP data validation
-    if(strlen($_POST['email'] < 1) || strlen($_POST['password']) < 1) {
+    if (strlen($_POST['email'] < 1) || strlen($_POST['password']) < 1) {
         $_SESSION['error'] = 'Missing data';
         header('Location: index.php');
         return;
     }
-    if(!strpos($_POST['email'],'@')) {
+    if (!strpos($_POST['email'], '@')) {
         $_SESSION['error'] = 'Bad data';
         header('Location: index.php');
         return;
     }
 
-    $check = hash('md5', $salt.$_POST['password']);
+    $check = hash('md5', $salt . $_POST['password']);
     $sql = "SELECT name FROM users WHERE email = :email AND password = :password";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array(
@@ -42,15 +42,16 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <html>
 
 <head>
+    <script type="text/javascript" src="script.js"></script>
     <title>Enrique Saracho</title>
 </head>
 
 <body>
     <form method="post">
         <h2>Please Log In</h2>
-        <p>Email<input type="text" name="email" /></p>
-        <p>Password<input type="password" name="password" /></p>
-        <input type="submit" value="Log In">
+        <p>Email<input type="text" name="email" id="email" /></p>
+        <p>Password<input type="password" name="password" id="password" /></p>
+        <input type="submit" value="Log In" onclick="return doValidate();">
         <input type="button" name="cancel" value="Cancel">
     </form>
 </body>
