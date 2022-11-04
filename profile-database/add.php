@@ -2,6 +2,11 @@
 require_once 'pdo.php';
 session_start();
 
+if(isset($_POST['cancel'])) {
+    header('Location: index.php');
+    return;
+}
+
 if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['headline']) && isset($_POST['summary'])) {
 
     // PHP data validation
@@ -44,7 +49,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['e
         <p>Headline:<br><input type="text" name="headline"></p>
         <p>Summary:<br><textarea name="summary"></textarea></p>
         <input type="submit" value="Add">
-        <!-- <input type="submit" value="Cancel" name="cancel"> -->
+        <input type="submit" value="Cancel" name="cancel">
     </form>
 </body>
 
