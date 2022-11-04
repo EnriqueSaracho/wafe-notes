@@ -42,7 +42,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['e
         <p>Last Name: <input type="text" name="last_name"></p>
         <p>Email: <input type="text" name="email"></p>
         <p>Headline:<br><input type="text" name="headline"></p>
-        <p>Summary:<br><input type="text" name="summary"></p>
+        <p>Summary:<br><textarea name="summary"></textarea></p>
         <input type="submit" value="Add">
         <!-- <input type="submit" value="Cancel" name="cancel"> -->
     </form>
