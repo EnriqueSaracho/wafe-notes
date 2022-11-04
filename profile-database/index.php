@@ -30,11 +30,8 @@ session_start();
         <a href="login.php">Please log in</a>
     <?php
     }
-
-    
     ?>
-
-    <!-- <a href="login.php">Please log in</a> -->
+    
     <!-- <table border="1">
             <tr><th>Name</th><th>Headline</th></tr>
         </table> -->
