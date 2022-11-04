@@ -2,6 +2,11 @@
 require_once "pdo.php";
 session_start();
 
+if(isset($_POST['cancel'])) {
+    header('Location: index.php');
+    return;
+}
+
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
     // PHP data validation
@@ -51,7 +56,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <p>Email<input type="text" name="email" id="email" /></p>
         <p>Password<input type="password" name="password" id="password" /></p>
         <input type="submit" value="Log In" onclick="return doValidate();">
-        <input type="button" name="cancel" value="Cancel">
+        <input type="submit" name="cancel" value="Cancel">
     </form>
 </body>
 
