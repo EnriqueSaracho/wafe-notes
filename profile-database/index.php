@@ -1,4 +1,5 @@
 <?php
+require_once "pdo.php";
 session_start();
 ?>
 
@@ -31,10 +32,25 @@ session_start();
     <?php
     }
     ?>
-    
-    <!-- <table border="1">
-            <tr><th>Name</th><th>Headline</th></tr>
-        </table> -->
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Headline</th>
+        </tr>
+        <?php
+        $stmt = $pdo->query("SELECT first_name, last_name, headline, profile_id FROM profile");
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr><td>";
+            echo(htmlentities($row['first_name']).' '.htmlentities($row['last_name']));
+            echo "</td><td>";
+            echo(htmlentities($row['headline']));
+            echo "</td><td>";
+            echo('<a href="edit.php?profile_id='.$row['profile_id'].'">Edit </a>');
+            echo('<a href="delete.php?profile_id='.$row['profile_id'].'">Delete</a>');
+        }
+        ?>
+    </table>
 </body>
 
 </html>
