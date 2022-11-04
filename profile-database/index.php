@@ -19,13 +19,21 @@ session_start();
         echo ('<p style="color: red">' . $_SESSION['error'] . '</p>');
         unset($_SESSION['error']);
     }
-    if (!isset($_SESSION['user_id'])) { ?>
-        <a href="login.php">Please log in</a>
-    <?php } else { ?>
+
+    if (isset($_SESSION['user_id']) && isset($_SESSION['name'])) {
+    ?>
         <a href="logout.php">Logout</a><br>
         <a href="add.php">Add new Entry</a>
-    <?php }
+    <?php
+    } else {
     ?>
+        <a href="login.php">Please log in</a>
+    <?php
+    }
+
+    
+    ?>
+
     <!-- <a href="login.php">Please log in</a> -->
     <!-- <table border="1">
             <tr><th>Name</th><th>Headline</th></tr>
