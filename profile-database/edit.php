@@ -2,7 +2,18 @@
 require_once 'pdo.php';
 session_start();
 
-if(isset($_POST['cancel'])) {
+$stmt = $pdo->prepare("SELECT profile_id, user_id FROM profile WHERE profile_id = :xyz");
+$stmt->execute(array(':xyz' => $_GET['profile_id']));
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($row !== false) {
+    if ($row['user_id'] !== $_SESSION['user_id']) {
+        $_SESSION['error'] = 'Not logged in';
+        header('Location: index.php');
+        return;
+    }
+}
+
+if (isset($_POST['cancel'])) {
     header('Location: index.php');
     return;
 }
