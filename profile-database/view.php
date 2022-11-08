@@ -1,6 +1,12 @@
 <?php
 require_once 'pdo.php';
 
+// Back button
+if(isset($_POST['back'])) {
+    header('Location: index.php');
+    return;
+}
+
 // SELECT values from database
 $stmt = $pdo->prepare("SELECT * FROM profile WHERE profile_id = :x");
 $stmt->execute(array(':x' => $_GET['profile_id']));
@@ -27,6 +33,9 @@ $profile_id = $row['profile_id'];
     <p>Last name: <?= $last_name ?></p>
     <p>Email: <?= $email ?></p>
     <p>Summary: <?= $summary ?></p>
+    <form method="post">
+        <input type="submit" name="back" value="Back">
+    </form>
 </body>
 
 </html>
