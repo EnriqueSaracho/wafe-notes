@@ -34,10 +34,6 @@ session_start();
     ?>
 
     <table border="1">
-        <!-- <tr>
-            <th>Name</th>
-            <th>Headline</th>
-        </tr> -->
         <?php
         $stmt = $pdo->query("SELECT first_name, last_name, headline, profile_id FROM profile");
         if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
