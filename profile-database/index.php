@@ -45,7 +45,7 @@ session_start();
             echo "<tr><td>";
             echo (htmlentities($row['first_name']) . ' ' . htmlentities($row['last_name']));
             echo "</td><td>";
-            echo (htmlentities($row['headline']));
+            echo ('<a href="view.php?profile_id='.$row['profile_id'].'">'.htmlentities($row['headline']).'</a>');
             echo "</td><td>";
             echo ('<a href="edit.php?profile_id=' . $row['profile_id'] . '">Edit </a>');
             echo ('<a href="delete.php?profile_id=' . $row['profile_id'] . '">Delete</a>');
