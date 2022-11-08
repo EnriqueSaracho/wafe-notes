@@ -58,7 +58,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <p class="form-label">Email: <input type="text" name="email" id="email" class="form-control"></p>
             <p class="form-label">Password: <input type="password" name="password" id="password" class="form-control"></p>
             <input type="submit" value="Log In" onclick="return doValidate();" class="btn btn-primary">
-            <input type="submit" name="cancel" value="Cancel" class="btn btn-secondarygit">
+            <input type="submit" name="cancel" value="Cancel" class="btn btn-secondary">
         </form>
     </div>
 </body>
