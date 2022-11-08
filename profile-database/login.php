@@ -48,16 +48,19 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <head>
     <script type="text/javascript" src="script.js"></script>
     <title>Enrique Saracho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
-    <form method="post">
-        <h2>Please Log In</h2>
-        <p>Email<input type="text" name="email" id="email" /></p>
-        <p>Password<input type="password" name="password" id="password" /></p>
-        <input type="submit" value="Log In" onclick="return doValidate();">
-        <input type="submit" name="cancel" value="Cancel">
-    </form>
+    <div class="container col-4 my-5">
+        <form method="post">
+            <h2>Please Log In</h2>
+            <p class="form-label">Email: <input type="text" name="email" id="email" class="form-control"></p>
+            <p class="form-label">Password: <input type="password" name="password" id="password" class="form-control"></p>
+            <input type="submit" value="Log In" onclick="return doValidate();" class="btn btn-primary">
+            <input type="submit" name="cancel" value="Cancel" class="btn btn-secondarygit">
+        </form>
+    </div>
 </body>
 
 </html>
