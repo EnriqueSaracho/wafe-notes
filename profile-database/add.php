@@ -38,19 +38,24 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['e
 ?>
 <html>
 
-<head></head>
+<head>
+    <title>Enrique Saracho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
 
 <body>
-    <form method="post">
-        <h1>Adding profile for <?= htmlentities($_SESSION['name'])  ?></h1>
-        <p>First Name: <input type="text" name="first_name"></p>
-        <p>Last Name: <input type="text" name="last_name"></p>
-        <p>Email: <input type="text" name="email"></p>
-        <p>Headline:<br><input type="text" name="headline"></p>
-        <p>Summary:<br><textarea name="summary"></textarea></p>
-        <input type="submit" value="Add">
-        <input type="submit" value="Cancel" name="cancel">
-    </form>
+    <div class="container col-6 my-5">
+        <form method="post">
+            <h1>Adding profile for <?= htmlentities($_SESSION['name'])  ?></h1>
+            <p class="form-label">First Name: <input type="text" name="first_name" class="form-control"></p>
+            <p class="form-label">Last Name: <input type="text" name="last_name" class="form-control"></p>
+            <p class="form-label">Email: <input type="text" name="email" class="form-control"></p>
+            <p class="form-label">Headline:<br><input type="text" name="headline" class="form-control"></p>
+            <p class="form-label">Summary:<br><textarea name="summary" class="form-control"></textarea></p>
+            <input type="submit" value="Add" class="btn btn-primary">
+            <input type="submit" value="Cancel" name="cancel" class="btn btn-secondary">
+        </form>
+    </div>
 </body>
 
 </html>
