@@ -39,15 +39,20 @@ if (isset($_POST['delete'])) {
 ?>
 <html>
 
-<head></head>
+<head>
+    <title>Enrique Saracho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
 
 <body>
-    <form method="post">
-        <p>Are you sure you want to delete <?= $row['first_name'] ?>'s profile</p>
-        <input type="hidden" name="profile_id" value="<?= $row['profile_id'] ?>"/>
-        <input type="submit" value="Delete" name="delete">
-        <input type="submit" value="Cancel" name="cancel">
-    </form>
+    <div class="container col-4 my-5">
+        <form method="post">
+            <p>Are you sure you want to delete <?= $row['first_name'] ?>'s profile</p>
+            <input type="hidden" name="profile_id" value="<?= $row['profile_id'] ?>" />
+            <input type="submit" value="Delete" name="delete" class="btn btn-danger">
+            <input type="submit" value="Cancel" name="cancel" class="btn btn-secondary">
+        </form>
+    </div>
 </body>
 
 </html>
