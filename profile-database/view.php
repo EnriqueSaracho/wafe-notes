@@ -2,7 +2,7 @@
 require_once 'pdo.php';
 
 // Back button
-if(isset($_POST['back'])) {
+if (isset($_POST['back'])) {
     header('Location: index.php');
     return;
 }
@@ -25,17 +25,22 @@ $profile_id = $row['profile_id'];
 ?>
 <html>
 
-<head></head>
+<head>
+    <title>Enrique Saracho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
 
 <body>
-    <h1><?= $headline ?></h1>
-    <p>First name: <?= $first_name ?></p>
-    <p>Last name: <?= $last_name ?></p>
-    <p>Email: <?= $email ?></p>
-    <p>Summary: <?= $summary ?></p>
-    <form method="post">
-        <input type="submit" name="back" value="Back">
-    </form>
+    <div class="container col-6 my-5">
+        <h1><?= $headline ?></h1>
+        <p>First name: <?= $first_name ?></p>
+        <p>Last name: <?= $last_name ?></p>
+        <p>Email: <?= $email ?></p>
+        <p>Summary: <?= $summary ?></p>
+        <form method="post">
+            <input type="submit" name="back" value="Back" class="btn btn-secondary">
+        </form>
+    </div>
 </body>
 
 </html>
