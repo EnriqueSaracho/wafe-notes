@@ -73,20 +73,25 @@ $profile_id = $row['profile_id'];
 ?>
 <html>
 
-<head></head>
+<head>
+    <title>Enrique Saracho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
 
 <body>
-    <form method="post">
-        <h1>Editing profile for <?= htmlentities($_SESSION['name'])  ?></h1>
-        <p>First Name: <input type="text" name="first_name" value="<?= $first_name ?>"></p>
-        <p>Last Name: <input type="text" name="last_name" value="<?= $last_name ?>"></p>
-        <p>Email: <input type="text" name="email" value="<?= $email ?>"></p>
-        <p>Headline:<br><input type="text" name="headline" value="<?= $headline ?>"></p>
-        <p>Summary:<br><textarea name="summary"><?= $summary ?></textarea></p>
-        <input type="hidden" name="profile_id" value="<?= $profile_id ?>" />
-        <input type="submit" value="Update">
-        <input type="submit" value="Cancel" name="cancel">
-    </form>
+    <div class="container col-6 my-5">
+        <form method="post">
+            <h1>Editing profile for <?= htmlentities($_SESSION['name'])  ?></h1>
+            <p class="form-label">First Name: <input type="text" name="first_name" value="<?= $first_name ?>" class="form-control"></p>
+            <p class="form-label">Last Name: <input type="text" name="last_name" value="<?= $last_name ?>" class="form-control"></p>
+            <p class="form-label">Email: <input type="text" name="email" value="<?= $email ?>" class="form-control"></p>
+            <p class="form-label">Headline:<br><input type="text" name="headline" value="<?= $headline ?>" class="form-control"></p>
+            <p class="form-label">Summary:<br><textarea name="summary" class="form-control"><?= $summary ?></textarea></p>
+            <input type="hidden" name="profile_id" value="<?= $profile_id ?>" />
+            <input type="submit" value="Update" class="btn btn-primary">
+            <input type="submit" value="Cancel" name="cancel" class="btn btn-secondary">
+        </form>
+    </div>
 </body>
 
 </html>
