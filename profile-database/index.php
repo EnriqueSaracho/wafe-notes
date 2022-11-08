@@ -34,20 +34,26 @@ session_start();
     ?>
 
     <table border="1">
-        <tr>
+        <!-- <tr>
             <th>Name</th>
             <th>Headline</th>
-        </tr>
+        </tr> -->
         <?php
         $stmt = $pdo->query("SELECT first_name, last_name, headline, profile_id FROM profile");
-        while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr><th>Name</th><th>Headline</th></tr>";
+        }
+
+        $stmt = $pdo->query("SELECT first_name, last_name, headline, profile_id FROM profile");
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr><td>";
-            echo(htmlentities($row['first_name']).' '.htmlentities($row['last_name']));
+            echo (htmlentities($row['first_name']) . ' ' . htmlentities($row['last_name']));
             echo "</td><td>";
-            echo(htmlentities($row['headline']));
+            echo (htmlentities($row['headline']));
             echo "</td><td>";
-            echo('<a href="edit.php?profile_id='.$row['profile_id'].'">Edit </a>');
-            echo('<a href="delete.php?profile_id='.$row['profile_id'].'">Delete</a>');
+            echo ('<a href="edit.php?profile_id=' . $row['profile_id'] . '">Edit </a>');
+            echo ('<a href="delete.php?profile_id=' . $row['profile_id'] . '">Delete</a>');
+            echo "</td></tr>";
         }
         ?>
     </table>
