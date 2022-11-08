@@ -18,12 +18,15 @@ $summary = htmlentities($row['summary']);
 $profile_id = $row['profile_id'];
 ?>
 <html>
-    <head></head>
-    <body>
-        <p>First name: </p>
-        <p>Last name: </p>
-        <p>Email: </p>
-        <p>Headline: </p>
-        <p>Summary: </p>
-    </body>
+
+<head></head>
+
+<body>
+    <h1><?= $headline ?></h1>
+    <p>First name: <?= $first_name ?></p>
+    <p>Last name: <?= $last_name ?></p>
+    <p>Email: <?= $email ?></p>
+    <p>Summary: <?= $summary ?></p>
+</body>
+
 </html>
