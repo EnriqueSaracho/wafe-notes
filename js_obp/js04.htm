@@ -9,7 +9,7 @@
   <body>
     <h1>Hello World</h1>
     <script type="text/javascript">
-      function PartyAnimal(nam) {
+      function PartyAnimal(nam) { // Template of class
         this.x = 0;
         this.name = nam;
         console.log("Built " + nam);
@@ -18,10 +18,10 @@
           console.log(nam + " = " + this.x);
         };
       }
-      s = new PartyAnimal("Sally");
+      s = new PartyAnimal("Sally"); // Instance of class
       s.party();
 
-      j = new PartyAnimal("Jim");
+      j = new PartyAnimal("Jim"); // Instance
       j.party();
       s.party();
     </script>
