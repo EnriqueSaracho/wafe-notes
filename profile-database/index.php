@@ -11,15 +11,15 @@ session_start();
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container col-8 mt-5">
         <h1 class="my-3">Enrique Saracho's Resume Registry</h1>
         <?php
         if (isset($_SESSION['success'])) {
-            echo ('<p style="color: green">' . $_SESSION['success'] . '</p>');
+            echo ('<p style="color: green" class="alert alert-success">' . $_SESSION['success'] . '</p>');
             unset($_SESSION['success']);
         }
         if (isset($_SESSION['error'])) {
-            echo ('<p style="color: red">' . $_SESSION['error'] . '</p>');
+            echo ('<p style="color: red" class="alert alert-danger">' . $_SESSION['error'] . '</p>');
             unset($_SESSION['error']);
         }
     
@@ -39,7 +39,7 @@ session_start();
             <?php
             $stmt = $pdo->query("SELECT first_name, last_name, headline, profile_id FROM profile");
             if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo '<tr class="table-success"><th>Name</th><th>Headline</th><th>Action</th></tr>';
+                echo '<tr><th>Name</th><th>Headline</th><th>Action</th></tr>';
             }
     
             $stmt = $pdo->query("SELECT first_name, last_name, headline, profile_id FROM profile");
