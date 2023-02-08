@@ -78,6 +78,7 @@ label {
   background: linear-gradient(145deg, #e0e8fe, #bcc3d5);
   box-shadow: 5px 5px 10px #b2b8c9, -5px -5px 10px #f0faff;
   padding: 0.5em;
+  margin-right: 0.5em;
   color: blue;
   font-size: 1rem;
 }
