@@ -40,12 +40,49 @@ a {
   text-decoration: none;
   border-radius: 10px;
   background: linear-gradient(145deg, #e0e8fe, #bcc3d5);
-  box-shadow: 40px 40px 80px #9fa5b4, -40px -40px 80px #ffffff;
+  box-shadow: 5px 5px 10px #b2b8c9, -5px -5px 10px #f0faff;
   padding: 0.5em;
   color: blue;
+  font-size: 1rem;
 }
 a:active {
-  border-radius: 50px;
+  border-radius: 10px;
+  background: #d1d9ed;
+  box-shadow: inset 16px 16px 32px #9fa5b4, inset -16px -16px 32px #ffffff;
+}
+
+label {
+  display: inline-block;
+  height: 35px;
+  width: 80px;
+}
+
+.input {
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  background: #d1d9ed;
+  box-shadow: inset 5px 5px 10px #b2b8c9, inset -5px -5px 10px #f0faff;
+}
+#password {
+  margin-bottom: 20px;
+}
+
+.container {
+  text-align: center;
+}
+
+.btn-input {
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #e0e8fe, #bcc3d5);
+  box-shadow: 5px 5px 10px #b2b8c9, -5px -5px 10px #f0faff;
+  padding: 0.5em;
+  color: blue;
+  font-size: 1rem;
+}
+.btn-input:active {
+  border-radius: 10px;
   background: #d1d9ed;
   box-shadow: inset 16px 16px 32px #9fa5b4, inset -16px -16px 32px #ffffff;
 }
