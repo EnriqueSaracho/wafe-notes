@@ -1,0 +1,51 @@
+:root {
+  --main-color: #ffffff;
+  --stand-out-color: #d1d9ed;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--stand-out-color);
+  background: linear-gradient(hwb(224 82% 10%), var(--stand-out-color));
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 950px;
+  background-color: white;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #d1d8ec;
+  -webkit-box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+  box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+  margin: 50px auto 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  width: 80%;
+  line-height: 35px;
+  font-weight: 400;
+  text-align: left;
+}
+
+th {
+  font-size: 1.1em;
+}
+
+a {
+  text-decoration: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #e0e8fe, #bcc3d5);
+  box-shadow: 40px 40px 80px #9fa5b4, -40px -40px 80px #ffffff;
+  padding: 0.5em;
+  color: blue;
+}
+a:active {
+  border-radius: 50px;
+  background: #d1d9ed;
+  box-shadow: inset 16px 16px 32px #9fa5b4, inset -16px -16px 32px #ffffff;
+}
