@@ -61,18 +61,32 @@ $user_id = $row['user_id'];
 ?>
 <html>
 
-<head></head>
+<head>
+    <meta charset="utf-8">
+    <title>PHP CRUD Edit User</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+</head>
 
 <body>
-    <p>Edit User</p>
-    <form method="post">
-        <p>Name: <input type="text" name="name" value="<?= $n ?>" /></p>
-        <p>Email: <input type="text" name="email" value="<?= $e ?>" /></p>
-        <p>Password: <input type="password" name="password" value="<?= $p ?>" /></p>
-        <input type="hidden" name="user_id" value="<?= $user_id ?>" />
-        <input type="submit" value="Update" />
-        <a href="index.php">Cancel</a>
-    </form>
+    <div class="wrapper">
+        <h2>Edit User</h2>
+        <form method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="<?= $n ?>" id="name" class="input" /><br>
+            <label for="email">Email:</label>
+            <input type="text" name="email" value="<?= $e ?>" id="email" class="input" /><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" value="<?= $p ?>" id="password" class="input" /><br>
+            <input type="hidden" name="user_id" value="<?= $user_id ?>" />
+            <div class="container">
+                <input type="submit" value="Update" class="btn-input" />
+                <a href="index.php">Cancel</a>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
